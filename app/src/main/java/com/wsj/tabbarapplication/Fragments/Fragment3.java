@@ -1,7 +1,6 @@
 package com.wsj.tabbarapplication.Fragments;
 
 import androidx.fragment.app.Fragment;
-
 import com.wsj.tabbarapplication.R;
 
 /**

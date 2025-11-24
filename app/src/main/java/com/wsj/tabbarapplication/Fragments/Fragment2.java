@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -13,24 +12,20 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 import com.wsj.tabbarapplication.R;
 import com.wsj.tabbarapplication.controller.CommodityAdapterR;
 import com.wsj.tabbarapplication.pojo.Commodity;
-
 import java.util.ArrayList;
 import java.util.List;
-
 /**
  * @author: 绫_N
  * @date: 2025/11/19
  * @description: TabBarApplication
  */
 public class Fragment2 extends Fragment{
-
     private Commodity commodity;
     private List<Commodity> commodities = new ArrayList<>();
     public Fragment2() {
         super(R.layout.fragment_2);
 
     }
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -40,7 +35,6 @@ public class Fragment2 extends Fragment{
         StaggeredGridLayoutManager layoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(layoutManager);
         CommodityAdapterR adapter = new CommodityAdapterR(commodities);
-
         //传入数据
         adapter.setOnItemClickListener(new CommodityAdapterR.OnItemClickListener() {
             @Override
@@ -56,20 +50,11 @@ public class Fragment2 extends Fragment{
                         .replace(android.R.id.content, commodity_mod)
                         .addToBackStack(null)//添加返回
                         .commit();
-
             }
         });
-
         recyclerView.setAdapter(adapter);
         return view;
-//        return super.onCreateView(inflater, container, savedInstanceState);
     }
-
-    //    initData();
-//    //线性布局
-//    RecyclerView recyclerView = findViewById(R.id.recycler_view);
-//    LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
-//        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
     private void initData() {
         String[] names ={
                 "99新 iPhone 14 Pro Max",

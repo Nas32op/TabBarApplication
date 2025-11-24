@@ -11,11 +11,8 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.wsj.tabbarapplication.R;
-import com.wsj.tabbarapplication.Fragments.commodity_mod;
 import com.wsj.tabbarapplication.pojo.Commodity;
-
 import java.util.List;
 
 /**
