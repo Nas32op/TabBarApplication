@@ -43,22 +43,18 @@ public class commodity_mod extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.commodity_mod);
-
-        // 初始化视图控件
+        //初始化视图
         ImageView ivImg = findViewById(R.id.iv_img);
-        TextView tvName = findViewById(R.id.tv_name); // 确保ID与布局一致
+        TextView tvName = findViewById(R.id.tv_name);
         TextView tvPrice = findViewById(R.id.tv_price);
         TextView tvDesc = findViewById(R.id.tv_desc);
-
-        // 获取传递的 Intent 数据
         Intent intent = getIntent();
         if (intent != null) {
             String name = intent.getStringExtra("kName");
             String price = intent.getStringExtra("kPrice");
             String desc = intent.getStringExtra("kDesc");
             int imgId = intent.getIntExtra("kImgId", 0);
-
-            // 设置数据到视图
+            //设置数据到视图
             tvName.setText(name);
             tvPrice.setText(price);
             tvDesc.setText(desc);
