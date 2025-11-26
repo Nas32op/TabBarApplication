@@ -1,5 +1,6 @@
 package com.wsj.tabbarapplication.Fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -39,17 +40,25 @@ public class Fragment2 extends Fragment{
         adapter.setOnItemClickListener(new CommodityAdapterR.OnItemClickListener() {
             @Override
             public void onItemClick(Commodity commodity) {
-                commodity_mod commodity_mod = new commodity_mod();
-                Bundle bundle = new Bundle();
-                bundle.putString("kName", commodity.getName());
-                bundle.putString("kPrice", commodity.getPrice());
-                bundle.putString("kDesc", commodity.getDesc());
-                commodity_mod.setArguments(bundle);
-                getParentFragmentManager()
-                        .beginTransaction()
-                        .replace(android.R.id.content, commodity_mod)
-                        .addToBackStack(null)//添加返回
-                        .commit();
+//                commodity_mod commodity_mod = new commodity_mod();
+//                Bundle bundle = new Bundle();
+//                bundle.putString("kName", commodity.getName());
+//                bundle.putString("kPrice", commodity.getPrice());
+//                bundle.putString("kDesc", commodity.getDesc());
+//                commodity_mod.setArguments(bundle);
+//                getParentFragmentManager()
+//                        .beginTransaction()
+//                        .replace(android.R.id.content, commodity_mod)
+//                        .addToBackStack(null)//添加返回
+//                        .commit();
+                //跳转到新页面并传递当前参数
+                Intent intent = new Intent(getActivity(), commodity_mod.class);
+                intent.putExtra("kName", commodity.getName());
+                intent.putExtra("kPrice", commodity.getPrice());
+                intent.putExtra("kDesc", commodity.getDesc());
+                //传递照片使用id
+                intent.putExtra("kImgId", commodity.getImgId());
+                startActivity(intent);
             }
         });
         recyclerView.setAdapter(adapter);

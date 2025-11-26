@@ -11,6 +11,7 @@
         android:roundIcon="@mipmap/miku_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TabBarApplication">
+        <activity android:name=".Fragments.commodity_mod" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
