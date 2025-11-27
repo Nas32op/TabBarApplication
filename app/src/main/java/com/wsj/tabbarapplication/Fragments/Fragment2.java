@@ -147,7 +147,7 @@ public class Fragment2 extends Fragment{
                 "￥1,999.00"
         };
         int[] images = {
-                R.drawable.miku,
+                R.drawable.iphone,
                 R.drawable.miku,
                 R.drawable.miku,
                 R.drawable.miku,
