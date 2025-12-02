@@ -38,48 +38,31 @@
                 android:background="@drawable/sousuo"
                 android:backgroundTint="#6C5CE7" />
         </LinearLayout>
-
         <!-- 轮播图/Banner区域 -->
-        <LinearLayout
+        <FrameLayout
+            android:id="@+id/bannerContainer"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:layout_margin="16dp"
-            android:orientation="vertical"
-            android:background="@drawable/banner_background"
-            android:gravity="center"
-            android:padding="24dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="校园二手集市"
-                android:textSize="24sp"
-                android:textColor="@android:color/white"
-                android:textStyle="bold"
-                android:gravity="center" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="优质闲置，等你来淘"
-                android:textSize="14sp"
-                android:textColor="@android:color/white"
-                android:gravity="center" />
-
-            <Button
-                android:id="@+id/btnExplore"
-                android:layout_width="wrap_content"
-                android:layout_height="36dp"
-                android:layout_marginTop="16dp"
-                android:backgroundTint="@android:color/white"
-                android:text="立即探索"
-                android:textColor="#6C5CE7"
-                android:textSize="12sp"
-                android:paddingStart="24dp"
-                android:paddingEnd="24dp" />
-        </LinearLayout>
-
+            android:layout_margin="5dp">
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/bannerViewPager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+            <!-- 左侧点击区域 -->
+            <View
+                android:id="@+id/leftClickArea"
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+                android:background="@android:color/transparent"/>
+            <!-- 右侧点击区域 -->
+            <View
+                android:id="@+id/rightClickArea"
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="end"
+                android:background="@android:color/transparent"/>
+        </FrameLayout>
         <!-- 快捷分类标题 -->
         <TextView
             android:layout_width="match_parent"
