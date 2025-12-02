@@ -10,6 +10,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowCompat;
+import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.Fragment;
 import com.wsj.tabbarapplication.R;
 /**
@@ -42,7 +45,15 @@ public class commodity_mod extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // 开启沉浸式，内容扩展到屏幕底部（系统小白条悬浮）
+//        WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
         setContentView(R.layout.commodity_mod);
+//        View bottomBar = findViewById(R.id.commodity_mod);
+//        ViewCompat.setOnApplyWindowInsetsListener(bottomBar, (v, insets) -> {
+//            int bottom = insets.getInsets(WindowInsetsCompat.Type.systemBars()).bottom;
+////            v.setPadding(0, 0, 0, bottom); // 防止底部导航被小白条挡住
+//            return WindowInsetsCompat.CONSUMED;
+//        });
         //初始化视图
         ImageView ivImg = findViewById(R.id.iv_img);
         TextView tvName = findViewById(R.id.tv_name);
