@@ -30,6 +30,13 @@ public class MainActivity extends AppCompatActivity {
     private MyFragmentAdapter myFragmentAdapter;
     private TabLayout tabLayout;
     private String[] titles = {"首页", "闲置", "发布", "消息","我的"};
+    private int icon[] = {
+            R.drawable.home,
+            R.drawable.xianzhi,
+            R.drawable.fabu,
+            R.drawable.xiaoxi,
+            R.drawable.me
+    };
     private List<Fragment> fragments;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +67,8 @@ public class MainActivity extends AppCompatActivity {
                 new TabLayoutMediator.TabConfigurationStrategy() {
                     @Override
                     public void onConfigureTab(@NonNull TabLayout.Tab tab, int i) {
-                        tab.setText(titles[i]);
+//                        tab.setText(titles[i]);
+                        tab.setIcon(icon[i]);
                     }
                 }).attach();
     }

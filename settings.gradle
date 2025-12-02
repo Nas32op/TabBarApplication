@@ -19,5 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "TabBarApplication"
+rootProject.name = "myAppDemo_wsj"
 include ':app'

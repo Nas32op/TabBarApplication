@@ -18,14 +18,17 @@
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabLayout"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="55dp"
         app:tabPaddingStart="0dp"
         app:tabPaddingEnd="0dp"
         app:tabGravity="fill"
-        app:tabIndicatorFullWidth="true"
+        app:tabIconTint="@color/tab_icon_color"
+        app:tabIndicator="@drawable/tab_indicator_bg"
         app:tabIndicatorGravity="stretch"
+        app:tabIndicatorFullWidth="true"
         app:tabSelectedTextColor="#000000"
-        app:tabIndicatorColor="#F8B4B4"
+        app:tabTextAppearance="@style/TabTextStyle"
+        app:tabIndicatorColor="#9183FF"
         android:background="#fff"
         app:tabUnboundedRipple="false" />
 
