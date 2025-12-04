@@ -6,10 +6,12 @@ import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import androidx.fragment.app.Fragment;
 import androidx.viewpager2.widget.ViewPager2;
 
+import com.wsj.tabbarapplication.MainActivity;
 import com.wsj.tabbarapplication.R;
 import com.wsj.tabbarapplication.adapter.BannerAdapter;
 
@@ -47,10 +49,16 @@ public class Fragment1 extends Fragment {
                              Bundle savedInstanceState) {
         // 加载fragment_1.xml布局文件
         View view = inflater.inflate(R.layout.fragment_1, container, false);
-
+//点击查看全部按钮实现切换到商品瀑布流页面而非跳转页面intent
+        Button buttonGetFragment2 = view.findViewById(R.id.tvViewAll);
+        buttonGetFragment2.setOnClickListener(v -> {
+            MainActivity activity = (MainActivity) getActivity();
+            if (activity != null) {
+                activity.switchToPage(1); // 切换到 Fragment2
+            }
+        });
         // 初始化Banner ViewPager组件
         bannerViewPager = view.findViewById(R.id.bannerViewPager);
-
         // 设置Banner图片资源列表
         List<Integer> bannerImages = Arrays.asList(
                 R.drawable.p_banner,

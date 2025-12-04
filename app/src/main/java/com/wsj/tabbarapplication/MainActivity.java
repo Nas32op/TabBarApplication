@@ -48,14 +48,14 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
         // 开启沉浸式，内容扩展到屏幕底部（系统小白条悬浮）
-        WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
-        setContentView(R.layout.activity_main);
-        View bottomBar = findViewById(R.id.main);
-        ViewCompat.setOnApplyWindowInsetsListener(bottomBar, (v, insets) -> {
-            int bottom = insets.getInsets(WindowInsetsCompat.Type.systemBars()).bottom;
-            v.setPadding(0, 0, 0, bottom); // 防止底部导航被小白条挡住
-            return WindowInsetsCompat.CONSUMED;
-        });
+//        WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
+//        setContentView(R.layout.activity_main);
+//        View bottomBar = findViewById(R.id.main);
+//        ViewCompat.setOnApplyWindowInsetsListener(bottomBar, (v, insets) -> {
+//            int bottom = insets.getInsets(WindowInsetsCompat.Type.systemBars()).bottom;
+//            v.setPadding(0, 0, 0, bottom); // 防止底部导航被小白条挡住
+//            return WindowInsetsCompat.CONSUMED;
+//        });
         tabLayout = findViewById(R.id.tabLayout);
         viewPager = findViewById(R.id.viewPager);
         initTab();
@@ -78,5 +78,10 @@ public class MainActivity extends AppCompatActivity {
                         tab.setIcon(icon[i]);
                     }
                 }).attach();
+    }
+    //切换fragment方法
+    public void switchToPage(int index) {
+        ViewPager2 viewPager = findViewById(R.id.viewPager);
+        viewPager.setCurrentItem(index, true); // true 表示带动画切换
     }
 }

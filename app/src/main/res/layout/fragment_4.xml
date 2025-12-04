@@ -5,9 +5,17 @@
     android:gravity="center"
     android:background="#fff"
     android:orientation="vertical">
-
     <TextView
+        android:id="@+id/tv_result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="消息页面" />
+        android:text="等待数据..."
+        android:textSize="18sp"
+        android:layout_marginBottom="20dp"/>
+
+    <Button
+        android:id="@+id/btn_request"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="获取后端数据" />
 </LinearLayout>
