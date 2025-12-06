@@ -91,7 +91,6 @@ public class Fragment1 extends Fragment {
             bannerViewPager.setCurrentItem(prev, true);
             resetAutoScroll();
         });
-
         rightArea.setOnClickListener(v -> {
             int next = (bannerViewPager.getCurrentItem() + 1) % bannerImages.size();
             bannerViewPager.setCurrentItem(next, true);

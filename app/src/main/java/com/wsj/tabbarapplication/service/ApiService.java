@@ -13,4 +13,12 @@ import retrofit2.http.GET;
 public interface ApiService {
     @GET("/api/user")
     Call<User> getUser();
+
+    @GET("/upload")
+    retrofit2.Call<String> upload(
+            @retrofit2.http.Query("title") String title,
+            @retrofit2.http.Query("price") String price,
+            @retrofit2.http.Query("description") String description,
+            @retrofit2.http.Query("image") String imageBase64
+    );
 }
