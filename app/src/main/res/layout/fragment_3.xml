@@ -12,6 +12,7 @@
 
         <!-- 上传图片区域 -->
         <LinearLayout
+            android:id="@+id/selectImg"
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:gravity="center"

@@ -71,7 +71,6 @@ public class Fragment1 extends Fragment {
         // 创建并设置Banner适配器
         BannerAdapter adapter = new BannerAdapter(bannerImages);
         bannerViewPager.setAdapter(adapter);
-
         // 定义自动滚动任务：每5秒切换到下一张图片
         Runnable runnable = new Runnable() {
             @Override
@@ -81,19 +80,15 @@ public class Fragment1 extends Fragment {
                 handler.postDelayed(this, 5000);
             }
         };
-
         // 启动自动滚动任务
         handler.postDelayed(runnable, 5000);
-
         // 获取左右点击区域控件，并绑定点击事件以手动切换图片
         View leftArea = view.findViewById(R.id.leftClickArea);
         View rightArea = view.findViewById(R.id.rightClickArea);
-
         leftArea.setOnClickListener(v -> {
             int prev = bannerViewPager.getCurrentItem() - 1;
             if (prev < 0) prev = bannerImages.size() - 1;
             bannerViewPager.setCurrentItem(prev, true);
-
             resetAutoScroll();
         });
 

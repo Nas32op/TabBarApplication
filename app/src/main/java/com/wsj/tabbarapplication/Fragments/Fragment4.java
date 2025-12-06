@@ -28,6 +28,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class Fragment4 extends Fragment{
     private TextView tvResult;
     private Button btnRequest;
+    private String url = "http://192.168.111.5/";
     public Fragment4() {
         super(R.layout.fragment_4);
     }
@@ -56,7 +57,7 @@ public class Fragment4 extends Fragment{
         tvResult.setText("请求中...");
         //初始化 Retrofit
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.111.5")//后端地址
+                .baseUrl(url)//后端地址
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         ApiService apiService = retrofit.create(ApiService.class);
