@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -32,7 +31,6 @@ public class Fragment4 extends Fragment{
     public Fragment4() {
         super(R.layout.fragment_4);
     }
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -44,23 +42,21 @@ public class Fragment4 extends Fragment{
         // 注意：这里必须用 view.findViewById
         tvResult = view.findViewById(R.id.tv_result);
         btnRequest = view.findViewById(R.id.btn_request);
-
         btnRequest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 fetchData();
             }
         });
-//        super.onViewCreated(view, savedInstanceState);
+        //super.onViewCreated(view, savedInstanceState);
     }
     private void fetchData() {
-        // 禁用按钮，防止重复点击
+        //禁用按钮，防止重复点击
         btnRequest.setEnabled(false);
         tvResult.setText("请求中...");
-
-        // 初始化 Retrofit
+        //初始化 Retrofit
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://172.20.10.8") //后端地址
+                .baseUrl("http://192.168.111.5")//后端地址
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         ApiService apiService = retrofit.create(ApiService.class);
@@ -77,7 +73,6 @@ public class Fragment4 extends Fragment{
                     tvResult.setText("错误码：" + response.code());
                 }
             }
-
             @Override
             public void onFailure(Call<User> call, Throwable t) {
                 if (!isAdded()) return;
