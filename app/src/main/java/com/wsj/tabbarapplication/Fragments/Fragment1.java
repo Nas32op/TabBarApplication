@@ -35,7 +35,6 @@ public class Fragment1 extends Fragment {
     private ViewPager2 bannerViewPager;
     Runnable autoScrollRunnable;
     private Handler handler = new Handler(Looper.getMainLooper());
-
     /**
      * 创建Fragment视图时调用，用于加载布局、设置ViewPager适配器及自动轮播逻辑
      *
@@ -94,7 +93,6 @@ public class Fragment1 extends Fragment {
         rightArea.setOnClickListener(v -> {
             int next = (bannerViewPager.getCurrentItem() + 1) % bannerImages.size();
             bannerViewPager.setCurrentItem(next, true);
-
             resetAutoScroll();
         });
 

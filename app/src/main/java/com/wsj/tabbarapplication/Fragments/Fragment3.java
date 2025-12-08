@@ -45,7 +45,8 @@ import retrofit2.converter.scalars.ScalarsConverterFactory;
  * @description: TabBarApplication
  */
 public class Fragment3 extends Fragment {
-    private String apiUrl = "http://192.168.111.5/";
+//    private String apiUrl = "http://192.168.111.5/";
+    private String apiUrl = "http://172.20.10.8/";
     private ImageView imgAddPicture;
     private EditText etTitle, etPrice, etDesc;
     private Button btnPublish;

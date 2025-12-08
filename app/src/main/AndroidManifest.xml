@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
-        android:maxSdkVersion="33"/>
 
-    <!--    本地网络链接-->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="33" /> <!-- 本地网络链接 -->
     <uses-permission android:name="android.permission.INTERNET" />
-<!--    android:usesCleartextTraffic="true"允许本地测试http-->
+
     <application
-        android:usesCleartextTraffic="true"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -17,7 +16,11 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/miku_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.TabBarApplication">
+        android:theme="@style/Theme.TabBarApplication"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".MyRelease"
+            android:exported="false" />
         <activity android:name=".Fragments.commodity_mod" />
         <activity
             android:name=".MainActivity"
