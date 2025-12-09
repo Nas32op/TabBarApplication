@@ -49,9 +49,22 @@ public class ReleaseAdapter extends RecyclerView.Adapter<ReleaseAdapter.ViewHold
 
         // 关键：图片加载，拼接完整的 URL
         String fullImageUrl = BASE_URL + release.getImagePath();
+        android.util.Log.d("ReleaseAdapter", "图片地址: " + fullImageUrl);
 
         Glide.with(context)
-                .load(fullImageUrl) // 加载完整的 HTTP URL
+                .load(fullImageUrl)
+                .listener(new com.bumptech.glide.request.RequestListener<android.graphics.drawable.Drawable>() {
+                    @Override
+                    public boolean onLoadFailed(@androidx.annotation.Nullable com.bumptech.glide.load.engine.GlideException e, Object model, com.bumptech.glide.request.target.Target<android.graphics.drawable.Drawable> target, boolean isFirstResource) {
+                        android.util.Log.e("ReleaseAdapter", "Image Load Failed: " + (e != null ? e.getMessage() : "Unknown"), e);
+                        return false;
+                    }
+
+                    @Override
+                    public boolean onResourceReady(android.graphics.drawable.Drawable resource, Object model, com.bumptech.glide.request.target.Target<android.graphics.drawable.Drawable> target, com.bumptech.glide.load.DataSource dataSource, boolean isFirstResource) {
+                        return false;
+                    }
+                })
                 .into(holder.ivImage);
     }
 
