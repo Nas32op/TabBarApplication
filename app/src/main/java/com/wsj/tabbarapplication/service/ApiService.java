@@ -1,9 +1,13 @@
 package com.wsj.tabbarapplication.service;
 
+import com.wsj.tabbarapplication.pojo.Release;
 import com.wsj.tabbarapplication.pojo.User;
+
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
+import retrofit2.http.POST;
 
 /**
  * @author: 绫_N
@@ -22,5 +26,5 @@ public interface ApiService {
             @retrofit2.http.Query("image") String imageBase64
     );
     @GET("/api/list")
-    Call<String> getList();
+    Call<List<Release>> getRelease();
 }
