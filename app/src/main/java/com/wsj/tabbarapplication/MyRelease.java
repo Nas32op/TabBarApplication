@@ -58,7 +58,7 @@ public class MyRelease extends AppCompatActivity {
             @Override
             public void onFailure(Call<List<Release>> call, Throwable t) {
                 t.printStackTrace(); // Print to Logcat
-                Toast.makeText(MyRelease.this, "Error: " + t.getMessage(), Toast.LENGTH_LONG).show();
+                Toast.makeText(MyRelease.this, "请求错误: " + t.getMessage(), Toast.LENGTH_LONG).show();
                 Log.e("errorApi", t.getMessage(), t);
             }
         });

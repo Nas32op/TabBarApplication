@@ -37,11 +37,9 @@ public class ReleaseAdapter extends RecyclerView.Adapter<ReleaseAdapter.ViewHold
         View view = LayoutInflater.from(context).inflate(R.layout.release_itme, parent, false);
         return new ViewHolder(view);
     }
-
     @Override
     public void onBindViewHolder(@NonNull ReleaseAdapter.ViewHolder holder, int position) {
         Release release = releases.get(position);
-
         // 设置文本
         holder.tvName.setText(release.getTitle());
         holder.tvPrice.setText("¥ " + release.getPrice());
